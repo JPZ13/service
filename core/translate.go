@@ -1,7 +1,7 @@
 package core
 
 import (
-	dbmodel "github.com/JPZ13/service/db/models"
+	dbmodel "github.com/JPZ13/service/db/model"
 	"github.com/JPZ13/service/model"
 )
 

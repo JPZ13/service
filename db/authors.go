@@ -3,7 +3,7 @@ package db
 import (
 	"context"
 
-	model "github.com/JPZ13/service/db/models"
+	"github.com/JPZ13/service/db/model"
 )
 
 // Authors holds db methods related to authors
