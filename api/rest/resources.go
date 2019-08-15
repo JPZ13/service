@@ -8,7 +8,7 @@ import (
 
 type baseResource struct {
 	logger  log.Logger
-	service core.DummyService
+	service core.Service
 }
 
 // Resources holds api resources
@@ -18,7 +18,7 @@ type Resources struct {
 
 // Config holds api resource config
 type Config struct {
-	DummyService core.DummyService
+	DummyService core.Service
 	Logger       log.Logger
 }
 

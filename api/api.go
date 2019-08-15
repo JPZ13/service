@@ -11,7 +11,7 @@ import (
 
 // Config holds api configuration
 type Config struct {
-	DummyService core.DummyService
+	DummyService core.Service
 	Logger       log.Logger
 }
 
