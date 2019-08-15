@@ -29,10 +29,11 @@ func New(config *Config) http.Handler {
 
 	// configure service analytics resources
 	api := new(restful.WebService)
+	api.Path("/api/blog/v1")
 	api.Consumes(restful.MIME_JSON)
 	api.Produces(restful.MIME_JSON)
 
-	api.Route(api.POST("/dummy").To(resources.DummyFunction))
+	api.Route(api.POST("/authors").To(resources.CreateAuthor))
 	container.Add(api)
 
 	return container

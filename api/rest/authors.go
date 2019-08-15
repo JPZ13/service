@@ -8,12 +8,12 @@ import (
 	restful "github.com/emicklei/go-restful"
 )
 
-type dummyResource struct {
+type authorsResource struct {
 	baseResource
 }
 
-// DummyFunction is a placeholder
-func (r *dummyResource) DummyFunction(request *restful.Request, response *restful.Response) {
+// CreateAuthor is the decoding/error layer to create an author
+func (r *authorsResource) CreateAuthor(request *restful.Request, response *restful.Response) {
 	createAuthorRequest := &model.CreateAuthorRequest{}
 	if !decodeRequest(request, response, createAuthorRequest) {
 		return
