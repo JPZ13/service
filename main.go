@@ -6,15 +6,13 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-
-	"github.com/jpz13/service/config"
 )
 
 func main() {
 	buf := bytes.Buffer{}
 	logger := log.New(&buf, "logger: ", log.Lshortfile)
 
-	server, err := newServer(&config.Server{
+	server, err := newServer(&serverConfig{
 		ListenPort: 8080,
 		Logger:     *logger,
 	})

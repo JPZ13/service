@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/jpz13/service/api"
-	"github.com/jpz13/service/config"
 	"github.com/jpz13/service/core"
 )
 
@@ -17,11 +16,17 @@ type server struct {
 	apiHandler http.Handler
 	listenPort int
 	serv       *http.Server
-	config     *config.Server
+	config     *serverConfig
 	logger     log.Logger
 }
 
-func newServer(config *config.Server) (*server, error) {
+// serverConfig holds all config needed to start a support analytics service instance
+type serverConfig struct {
+	ListenPort int
+	Logger     log.Logger
+}
+
+func newServer(config *serverConfig) (*server, error) {
 	dummyService := core.NewDummyService(&core.Config{})
 
 	apiHandler := api.New(&api.Config{
