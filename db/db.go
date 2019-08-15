@@ -36,8 +36,8 @@ type database struct {
 	db *sqlx.DB
 }
 
-// NewDB inits the db
-func NewDB(config *Config) (Database, error) {
+// New inits the db
+func New(config *Config) (Database, error) {
 	db, err := connectToDB(config)
 	if err != nil {
 		return nil, err
